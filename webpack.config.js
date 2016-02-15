@@ -50,7 +50,8 @@ var common = {
     },
     plugins : [
         new HtmlwebpackPlugin({
-            template: 'node_modules/html-webpack-template/index.html',
+            template: 'html-webpack-template/playlistXXX.html',
+            filename : 'playlistXXX.html',
             title : 'Playlist X',
             appMountId: 'app'
         }),
@@ -79,7 +80,12 @@ if(TARGET === 'start' || !TARGET){
             port: process.env.PORT
         },
         plugins: [
-            new webpack.HotModuleReplacementPlugin()
+            new webpack.HotModuleReplacementPlugin(),
+            new HtmlwebpackPlugin({
+                template: 'html-webpack-template/playlistXXX.html',
+                title : 'Playlist X',
+                appMountId: 'app'
+            }),
         ]
     })
 }
